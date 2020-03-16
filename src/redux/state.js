@@ -1,6 +1,9 @@
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const ADD_POST = 'ADD-POST';
 
+const SEND_MESSAGE = 'SEND_MESSAGE';
+const UPDATE_MESSAGE_BODY = 'UPDATE_MESSAGE_BODY';
+
 let store = {
     _state: {
         profilePage: {
@@ -27,7 +30,8 @@ let store = {
                 {id: 3, message: 'Yo'},
                 {id: 4, message: 'Yo'},
                 {id: 5, message: 'Yo'}
-            ]
+            ],
+            newMessageBody: ''
         },
         sidebar: {}
     },
@@ -57,6 +61,16 @@ let store = {
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber(this._state);
         }
+
+        else if (action.type === SEND_MESSAGE){
+            this._state.dialogsPage.messages.push({id: 6, message: this._state.dialogsPage.newMessageBody});
+            this._state.dialogsPage.newMessageBody  = ''
+            this._callSubscriber(this._state);
+        }
+        else if (action.type === UPDATE_MESSAGE_BODY){
+            this._state.dialogsPage.newMessageBody  = action.messageBody;
+            this._callSubscriber(this._state);
+        }
     }
 }
 
@@ -66,6 +80,14 @@ export const addPostAC = () => {
 
 export const updateNewPostTextAC = (newText) => {
     return { type: UPDATE_NEW_POST_TEXT, newText}
+}
+
+export const sendMessageAC = () => {
+    return { type:  SEND_MESSAGE}
+}
+
+export const updateMessageBodyAC = (messageBody) => {
+    return { type: UPDATE_MESSAGE_BODY, messageBody}
 }
 
 export default store;
