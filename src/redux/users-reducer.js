@@ -3,11 +3,7 @@ const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
 
 let initialState = {
-    users: [
-        {id:1, photoUrl: 'https://cs8.pikabu.ru/avatars/2505/x2505941-191418724.png', followed: false, fullName: 'Dmitry', status: 'i am boss', location: {city: 'Taganrog', country: 'Russia'}},
-        {id:2, photoUrl:'https://cs8.pikabu.ru/avatars/2505/x2505941-191418724.png', followed: true, fullName: 'Sasha', status: 'i am boss too', location: {city: 'Taganrog', country: 'Russia'}},
-        {id:3, photoUrl:'https://cs8.pikabu.ru/avatars/2505/x2505941-191418724.png', followed: false, fullName: 'Igor', status: 'i am boss too', location: {city: 'Taganrog', country: 'Russia'}},
-    ]
+    users: []
 }
 
 const userReducer = (state = initialState, action) => {
