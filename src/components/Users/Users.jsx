@@ -4,10 +4,9 @@ import Axios from 'axios';
 
 class Users extends React.Component {
 
-    constructor(props) {
-        super(props);
+    componentDidMount() {
         Axios.get('https://social-network.samuraijs.com/api/1.0/users')
-             .then( users => props.setUsers(users.data.items))
+             .then( users => this.props.setUsers(users.data.items))
     }
 
     render() { 
