@@ -18,3 +18,31 @@
     width: 100%;
     height: auto;
 }
+
+.actionPage{
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid black;
+    padding: 5px 10px;
+    margin-right: 5px;
+    background: black;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.paginationBtn{
+    cursor: pointer;
+    border: 1px solid black;
+    padding: 5px 10px;
+    margin-right: 5px;
+    background: white;
+    margin-bottom: 10px;
+}
+
+.pagination{
+    margin: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+}
